@@ -1,0 +1,17 @@
+<div id="<%= dom_id progress %>">
+  <p>
+    <strong>Title:</strong>
+    <%= progress.title %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+     <%= image_tag(progress.image, class: "attached_image") if progress.image.present? %>
+  </p>
+
+  <p>
+    <strong>Caption:</strong>
+    <%= progress.caption %>
+  </p>
+
+</div>

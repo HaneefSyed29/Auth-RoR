@@ -1,0 +1,36 @@
+<div class="flex m-24 items-center justify-center space-x-24">
+<%= image_tag "plant.png", class: "h-[10%] w-[38%]" %>
+
+<div class="bg-slate-200 opacity-75 px-12 py-14 rounded-2xl shadow-xl space-y-6 font-khand">
+<h2 class="text-3xl font-bold justify-center items-center mx-auto flex font-khand">Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"rounded-lg mb-4" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class:"rounded-lg"%>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field mt-4">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions bg-[#699D0E] items-center justify-center flex rounded-lg p-2 my-3">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links", class:"text-blue" %>
+
+</div>
+
+
+</div>
+

@@ -1,0 +1,15 @@
+<div class="px-12 py-3  shadow-xl flex justify-between">
+  <%= image_tag('logo.png', class: "h-12") %>
+  <div class="flex items-center">
+    <ul class="flex space-x-6 text-xl font-khand font-medium">
+      <%= link_to "FEEDS", class: "cursor-pointer" %>
+      <%= link_to "PHOTO GALLERY", class: "cursor-pointer" %>
+      <li class="cursor-pointer">SERVICES</li>
+      <li class="cursor-pointer">CART</li>
+  </div>
+  <div class="flex space-x-4 items-center">
+    <%= image_tag('logo.png', class: "h-12") %>
+  <%= button_to 'Logout', destroy_user_session_path, method: :delete, form_class: "logout-form", data: { confirm: "Are you sure you want to logout?" }, url: new_user_session_path %>
+  </div>
+  
+</div>

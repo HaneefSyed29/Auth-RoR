@@ -1,0 +1,33 @@
+<%= form_with(model: progress) do |form| %>
+  <% if progress.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(progress.errors.count, "error") %> prohibited this progress from being saved:</h2>
+
+      <ul>
+        <% progress.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.label :caption, style: "display: block" %>
+    <%= form.text_area :caption %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
